@@ -33,13 +33,13 @@
 
 /**
  * @file    _unit.c
- * @brief   Modulation effect entry template.
+ * @brief   Delay effect entry template.
  *
  * @addtogroup api
  * @{
  */
 
-#include "usermodfx.h"
+#include "userdelfx.h"
 
 /*===========================================================================*/
 /* Externs and Types.                                                        */
@@ -70,8 +70,8 @@ typedef void (*__init_fptr)(void);
  */
 
 __attribute__((used, section(".hooks")))
-static const user_modfx_hook_table_t s_hook_table = {
-  .magic = {'U','M','O','D'},
+static const user_delfx_hook_table_t s_hook_table = {
+  .magic = {'U','D','E','L'},
   .api = USER_API_VERSION,
   .platform = USER_TARGET_PLATFORM>>8,
   .reserved0 = {0},
@@ -124,14 +124,9 @@ void _hook_init(uint32_t platform, uint32_t api)
 }
 
 __attribute__((weak))
-void _hook_process(const float *main_xn, float *main_yn,
-                   const float *sub_xn, float *sub_yn,
-                   uint32_t frames)
+void _hook_process(float *xn, uint32_t frames)
 {
-  (void)main_xn;
-  (void)main_yn;
-  (void)sub_xn;
-  (void)sub_yn;
+  (void)xn;
   (void)frames;
 }
 
@@ -158,4 +153,3 @@ void _hook_param(uint8_t index, int32_t value)
 
 
 /** @} */
-

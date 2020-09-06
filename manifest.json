@@ -2,7 +2,7 @@
     "header" : 
     {
         "platform" : "minilogue-xd",
-        "module" : "modfx",
+        "module" : "delfx",
         "api" : "1.1-0",
         "dev_id" : 0,
         "prg_id" : 0,

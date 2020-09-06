@@ -2,7 +2,7 @@
 # Project Customization
 # #############################################################################
 
-PROJECT = mastervol2
+PROJECT = mastervol2-delfx
 
 UCSRC =
 
